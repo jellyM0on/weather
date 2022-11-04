@@ -9,11 +9,32 @@
 </head>
 <body>
    <div id="content">
-        <form id="userInput">
-            <input type="text" id="city" placeholder="Enter a city...">
-            <button type="submit" id="submit-btn">Search</button>
-        </form>
-
+        <div id="top-content">
+            <form id="userInput">
+                <input type="text" id="city" placeholder="Enter a city...">
+                <button type="submit" id="submit-btn">Search</button>
+            </form>
+            <div id="location-name">Sample Loc</div>
+        </div>
+        <div id="main-content">
+            <div class="weather-info">
+                <div id="weather-state">Sample State</div>
+                <div class="weather-temp">
+                    <div id="current-temp"></div>
+                    <div class="temp-etc">
+                        <div id="min-temp"></div>
+                        <div id="max-temp"></div>
+                    </div>
+                </div>
+                <div id="weather-descrip"></div>
+                <div class="weather-etc-info">
+                    <div id="humidity"></div>
+                    <div id="pressure"></div>
+                    <div id="wind"></div>
+                </div>
+            </div>
+            <div id="weather-display">Sample Display</div>
+        </div>
    </div>
 </body>
 </html>

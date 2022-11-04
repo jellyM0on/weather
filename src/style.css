@@ -1,0 +1,16 @@
+html, body{
+    margin: 0; 
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+#top-content,
+#main-content{
+    display: flex;
+    justify-content: space-between;
+}
+
