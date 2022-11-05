@@ -1,5 +1,11 @@
+@font-face {
+    font-family: retro;
+    src: url(./fonts/Retroville\ NC.ttf);
+}
+
 html, body{
     margin: 0; 
+    font-family: retro;
 }
 
 #content{
@@ -12,14 +18,70 @@ html, body{
 #main-content{
     display: flex;
     justify-content: space-between;
+    border: solid;
+    align-items: center;
+}
+
+#main-content{
+    padding: 5%;
+    height: fit-content;
+    justify-content: space-evenly;
 }
 
 .weather-temp{
     display: flex;
+    gap: 25px;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+#current-temp{
+    font-size: 2em;
 }
 
 .temp-etc{
     display: flex;
     flex-direction: column;
     font-size: smaller;
+}
+
+.weather-etc-info{
+    padding-top: 25px;
+    font-size: 1em;
+}
+
+#location-name,
+#weather-state{
+    font-size: 3em;
+}
+
+#location-name{
+    text-align: right;
+}
+
+#weather-display{
+    width: 400px;
+    height: 100%;
+    border: solid;
+    display: flex;
+    justify-content: center;
+}
+
+#weather-img{
+    width: 80%;
+}
+
+#footer{
+    font-size: 0.5em;
+}
+
+form{
+    padding-left: 5%;
+}
+
+#submit-btn,
+#city {
+    background-color: transparent;
+    border:none;
+    font-family: inherit;
 }

@@ -6,13 +6,15 @@ import wind from './icons/wind.gif'
 import snow from './icons/snowflake.gif'
 import clear from './icons/sun.gif'
 import rain from './icons/rain.gif'
+import loader from './icons/searching.gif'
 
 
 //get api
 async function getWeather(city){
-    try{
+    try {
         const info = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=4b812d8f160b178f3fb173a9c1a28dff`, {mode: 'cors'})
         const infoData = await info.json()
+        loadScreen(); 
         console.log(infoData);
         showWeather(infoData);
     }
@@ -21,6 +23,14 @@ async function getWeather(city){
     }
 };
 
+function loadScreen() {
+    window.addEventListener('load', () => {
+        window.setTimeout(() => {
+            const img = document.getElementById('weather-img');
+            img.src = loader;
+        }, 3000)
+    })
+}
 const weatherInfo = (city, state, temp, descrip, etc) => {
     temp = []; 
     const edescrip = editDescrip(descrip); 
@@ -32,14 +42,13 @@ const weatherInfo = (city, state, temp, descrip, etc) => {
         const unsplit = split.join(""); 
         return unsplit
     }
-
     return { city, state, temp, edescrip, etc }
-}
+}; 
 
 function setContent(id, text){
     const element = document.getElementById(id);
     element.textContent = text;
-}
+}; 
 
 function showWeather(data){
     const weather = weatherInfo(`${data.name} ${data.sys.country}`, data.weather[0].main, null, data.weather[0].description, null); 
@@ -49,21 +58,19 @@ function showWeather(data){
     console.log(weather); 
     setContent('location-name', `${weather.city}`)
     setContent('weather-state', `${weather.state}`)
-    setContent('current-temp', `${weather.temp[0]}`)
-    setContent('min-temp', `${weather.temp[1]}`)
-    setContent('max-temp', `${weather.temp[2]}`)
+    setContent('current-temp', `${weather.temp[0]} C`)
+    setContent('min-temp', `${weather.temp[1]} C`)
+    setContent('max-temp', `${weather.temp[2]} C`)
     setContent('weather-descrip', `${weather.edescrip}`)
-    setContent('humidity', `${weather.etc[0]}`)
-    setContent('pressure', `${weather.etc[1]}`)
-    setContent('wind', `${weather.etc[2]}`)
+    setContent('humidity', `Humidity: ${weather.etc[0]}%`)
+    setContent('pressure', `Pressure: ${weather.etc[1]}hPa`)
+    setContent('wind', `Wind: ${weather.etc[2]}m/s`)
 
     showDisplay(weather.state);
 }
 
 function showDisplay(state){
-    const display = document.getElementById('weather-display')
-    const img = document.createElement('img');
-    display.appendChild(img); 
+    const img = document.getElementById('weather-img')
 
     switch (state) {
         case 'Thunderstorm':

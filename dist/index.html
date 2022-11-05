@@ -11,31 +11,35 @@
    <div id="content">
         <div id="top-content">
             <form id="userInput">
+                <button type="submit" id="submit-btn">Search:</button>
                 <input type="text" id="city" placeholder="Enter a city...">
-                <button type="submit" id="submit-btn">Search</button>
             </form>
-            <div id="location-name"></div>
+            <div id="location-name">Weather?</div>
         </div>
         <div id="main-content">
             <div class="weather-info">
-                <div id="weather-state">Sample State</div>
+                <div id="weather-state">N/A</div>
                 <div class="weather-temp">
-                    <div id="current-temp"></div>
+                    <div id="current-temp">N/A</div>
                     <div class="temp-etc">
-                        <div id="min-temp"></div>
-                        <div id="max-temp"></div>
+                        <div id="min-temp">N/A</div>
+                        <div id="max-temp">N/A</div>
                     </div>
                 </div>
-                <div id="weather-descrip"></div>
+                <div id="weather-descrip">N/A</div>
                 <div class="weather-etc-info">
-                    <div id="humidity"></div>
-                    <div id="pressure"></div>
-                    <div id="wind"></div>
+                    <div id="humidity">N/A</div>
+                    <div id="pressure">N/A</div>
+                    <div id="wind">N/A</div>
                 </div>
             </div>
             <div id="weather-display">
+                <img id="weather-img" src="../src/icons/searching.gif">
             </div>
         </div>
+        <div id="footer">
+            <div>GIFS from <a href="https://www.flaticon.com/free-animated-icons/atmospheric">Freepik.</a></div>
+        </div> 
    </div>
 </body>
 </html>
