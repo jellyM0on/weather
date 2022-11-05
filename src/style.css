@@ -62,13 +62,14 @@ html, body{
 #weather-display{
     width: 400px;
     height: 100%;
-    border: solid;
     display: flex;
     justify-content: center;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 #weather-img{
-    width: 80%;
+    padding: 10%;
+    width: 300px;
 }
 
 #footer{
